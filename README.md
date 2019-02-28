@@ -17,8 +17,8 @@ yarn build
 ```
 Distributable files will be available at `dist/`
 
-## TODO
-- Watch `*.scss` and rebuild `*.scss.d.ts` when running `webpack-dev-server`
+## TODOs
+- ☑️ Watch `*.scss` and rebuild `*.scss.d.ts` when running `webpack-dev-server`
 - Make sample index page looks good
 
 ## License
