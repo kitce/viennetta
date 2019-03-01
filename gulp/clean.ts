@@ -1,8 +1,10 @@
 import gulp from 'gulp';
-import cleanDist from './clean.dist';
+import cleanCSS from './clean.css';
 import cleanScssDts from './clean.scss.d.ts';
+import cleanDist from './clean.dist';
 
 const task = gulp.parallel(
+  cleanCSS,
   cleanScssDts,
   cleanDist
 );

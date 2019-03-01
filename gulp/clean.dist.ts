@@ -1,8 +1,8 @@
 import del from 'del';
-import { TaskFunction } from 'gulp';
+import gulp from 'gulp';
 import { dist } from './files';
 
-const task: TaskFunction = () => del(dist);
+const task: gulp.TaskFunction = () => del(dist);
 
 task.displayName = 'clean:dist';
 

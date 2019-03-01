@@ -1,8 +1,8 @@
-import { TaskFunction } from 'gulp';
+import gulp from 'gulp';
 import webpack from 'webpack';
 import webpackProductionConfig from '../webpack.config.prod';
 
-const task: TaskFunction = (done) => {
+const task: gulp.TaskFunction = (done) => {
   const compiler = webpack(webpackProductionConfig);
   compiler.run((err, stats) => {
     if (err) return done(err);
@@ -10,12 +10,12 @@ const task: TaskFunction = (done) => {
       const info = stats.toJson();
       return done(info.errors);
     }
-    const output = stats.toString({ colors: true });
+    const output = stats.toString(webpackProductionConfig.stats);
     console.info(output);
     done();
   });
 };
 
-task.displayName = 'build:dist';
+task.displayName = 'bundle';
 
 export default task;

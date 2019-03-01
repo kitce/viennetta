@@ -1,14 +1,15 @@
-import { TaskFunction } from 'gulp';
+import gulp from 'gulp';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import webpackDevelopmentConfig from '../webpack.config.dev';
 
-const task: TaskFunction = () => {
+const task: gulp.TaskFunction = () => {
   const compiler = webpack(webpackDevelopmentConfig);
-  const stats: webpack.Options.Stats = { colors: true };
+  const { devServer, stats, watchOptions } = webpackDevelopmentConfig;
   const options: WebpackDevServer.Configuration = {
-    ...webpackDevelopmentConfig.devServer,
-    stats
+    ...devServer,
+    stats,
+    watchOptions
   };
   const port = options.port as number;
   const server = new WebpackDevServer(compiler, options);

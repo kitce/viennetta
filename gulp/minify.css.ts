@@ -1,9 +1,9 @@
-import gulp, { TaskFunction } from 'gulp';
+import gulp from 'gulp';
 import gulpCleanCSS from 'gulp-clean-css';
 import { distCSS } from './files';
 
-const task: TaskFunction = () => (
-  gulp.src(distCSS)
+const task: gulp.TaskFunction = () => (
+  gulp.src(distCSS, { base: '.' })
     .pipe(gulpCleanCSS())
     .pipe(gulp.dest('.'))
 );

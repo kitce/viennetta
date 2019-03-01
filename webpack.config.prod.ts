@@ -1,7 +1,7 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import webpack from 'webpack';
-import merge, { MergeStrategy } from 'webpack-merge';
+import merge from 'webpack-merge';
 import common from './webpack.config.common';
 
 // Rules
@@ -34,11 +34,14 @@ const prod: webpack.Configuration = {
   ],
   optimization: {
     minimize: false
+  },
+  stats: {
+    colors: true
   }
 };
 
 const strategy = {
-  'module.rules.use': <MergeStrategy>'prepend'
+  'module.rules.use': 'prepend' as merge.MergeStrategy
 };
 const config: webpack.Configuration = merge.smartStrategy(strategy)(common, prod);
 

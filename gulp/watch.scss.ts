@@ -1,13 +1,15 @@
-import gulp, { TaskFunction } from 'gulp';
-import { scss } from './files';
+import gulp from 'gulp';
 import cleanScssDts from './clean.scss.d.ts';
-import buildScssDts from './build.scss.d.ts';
+import sass from './sass';
+import cleanCSS from './clean.css';
+import { scss } from './files';
 
-const task: TaskFunction = () => (
+const task: gulp.TaskFunction = () => (
   gulp.watch(scss,
     gulp.series(
       cleanScssDts,
-      buildScssDts
+      sass,
+      cleanCSS
     )
   )
 );

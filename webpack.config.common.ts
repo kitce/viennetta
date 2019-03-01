@@ -22,10 +22,11 @@ const postcssLoader: webpack.RuleSetUse = {
   loader: 'postcss-loader'
 };
 
-const cssLoader: webpack.RuleSetUse = {
+export const cssLoader: webpack.RuleSetLoader = {
   loader: 'css-loader',
   options: {
-    modules: true
+    modules: true,
+    camelCase: true
   }
 };
 
@@ -69,7 +70,8 @@ const config: webpack.Configuration = {
   },
   plugins: [
     htmlWebpackPlugin
-  ]
+  ],
+  stats: 'minimal'
 };
 
 export default config;
