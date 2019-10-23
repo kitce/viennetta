@@ -14,7 +14,7 @@ const renamer = (path: gulpRename.ParsedPath) => {
 };
 
 const task: gulp.TaskFunction = () => (
-  gulp.src(css, { base: '.' })
+  gulp.src(css.src, { base: '.' })
     .pipe(gulpTypedCssModules({
       tcm: typedCssModules,
       camelCase

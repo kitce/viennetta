@@ -1,8 +1,10 @@
 import del from 'del';
 import gulp from 'gulp';
-import { scssDts } from './files';
+import { scss } from './files';
 
-const task: gulp.TaskFunction = () => del(scssDts);
+const task: gulp.TaskFunction = () => (
+  del(scss.dts)
+);
 
 task.displayName = 'clean:scss.d.ts';
 

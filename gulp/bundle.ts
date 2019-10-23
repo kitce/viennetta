@@ -12,7 +12,7 @@ const task: gulp.TaskFunction = (done) => {
     }
     const output = stats.toString(webpackProductionConfig.stats);
     console.info(output);
-    done();
+    return done();
   });
 };
 

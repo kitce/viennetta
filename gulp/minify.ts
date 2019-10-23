@@ -1,6 +1,6 @@
 import gulp from 'gulp';
-import minifyJS from './minify.js';
-import minifyCSS from './minify.css';
+import minifyJS from './minify:js';
+import minifyCSS from './minify:css';
 
 const task = gulp.parallel(
   minifyJS,

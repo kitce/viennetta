@@ -218,8 +218,12 @@ typings/
 
 # End of https://www.gitignore.io/api/node,macos,linux,intellij,visualstudiocode
 
-# Compiled files
-dist/
+### Additional project files ###
+# Generatred SCSS declaration files
+src/**/*.scss.d.ts
 
-# Generatred .scss.d.ts
-*.scss.d.ts
+# Compiled CSS files
+src/**/*.css
+
+# Distributable files
+dist/

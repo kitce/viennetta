@@ -1,10 +1,14 @@
 import gulp from 'gulp';
-import buildSCSS from './build.scss';
-import typeCSS from './type.css';
+import gulpSass from 'gulp-sass';
+import nodeSass from 'node-sass';
+import { scss } from './files';
 
-const task = gulp.series(
-  buildSCSS,
-  typeCSS
+gulpSass.compiler = nodeSass;
+
+const task: gulp.TaskFunction = () => (
+  gulp.src(scss.src, { base: '.' })
+    .pipe(gulpSass().on('error', gulpSass.logError))
+    .pipe(gulp.dest('.'))
 );
 
 task.displayName = 'sass';

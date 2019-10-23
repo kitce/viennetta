@@ -13,11 +13,9 @@ const task: gulp.TaskFunction = () => {
   };
   const port = options.port as number;
   const server = new WebpackDevServer(compiler, options);
-  server.listen(port, () => {
-    console.info(`Starting server on http://localhost:${port}`);
-  });
+  server.listen(port);
 };
 
-task.displayName = 'serve:dev';
+task.displayName = 'dev:server';
 
 export default task;
