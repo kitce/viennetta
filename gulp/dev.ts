@@ -1,10 +1,12 @@
 import gulp from 'gulp';
-import sass from './build:scss';
-import watcher from './watch:scss';
+import typeScss from './type:scss';
+import watchScss from './watch:scss';
 import server from './dev:server';
 
+const watcher = watchScss(typeScss);
+
 const task = gulp.series(
-  sass,
+  typeScss,
   gulp.parallel(
     watcher,
     server

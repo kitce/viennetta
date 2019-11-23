@@ -1,11 +1,12 @@
 import gulp from 'gulp';
-import sass from './build:scss';
 import { scss } from './files';
 
-const task: gulp.TaskFunction = () => (
-  gulp.watch(scss.src, sass)
-);
+const watch = (task: gulp.TaskFunction) => {
+  const _task: gulp.TaskFunction = () => (
+    gulp.watch(scss.src, task)
+  );
+  _task.displayName = `watch:scss > ${task.displayName}`;
+  return _task;
+};
 
-task.displayName = 'watch:scss';
-
-export default task;
+export default watch;

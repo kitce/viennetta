@@ -1,8 +1,9 @@
 import gulp from 'gulp';
+import typeCSS from './type:scss';
 import webpack from 'webpack';
 import webpackProductionConfig from '../webpack.config.prod';
 
-const task: gulp.TaskFunction = (done) => {
+const bundle: gulp.TaskFunction = (done) => {
   const compiler = webpack(webpackProductionConfig);
   compiler.run((err, stats) => {
     if (err) return done(err);
@@ -15,6 +16,11 @@ const task: gulp.TaskFunction = (done) => {
     return done();
   });
 };
+
+const task = gulp.series(
+  typeCSS,
+  bundle
+);
 
 task.displayName = 'bundle';
 
