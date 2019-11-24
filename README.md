@@ -1,6 +1,6 @@
 # Tiramisu
 
-Webpack-Babel-TypeScript-Sass Boilerplate (featuring Gulp, CSS Modules, PostCSS...)
+Webpack-Babel-TypeScript-Sass Boilerplate (featuring Gulp, CSS Modules, PostCSS, Tailwind...)
 
 Various examples for popular frontend frameworks can be found on the branches `example/*`.
 
@@ -18,8 +18,8 @@ yarn build
 Distributable files will be available at `dist/`
 
 ## TODOs
-- ☑️ Watch `*.scss` and rebuild `*.scss.d.ts` when running `webpack-dev-server`
-- Make sample index page looks good
+- [x] Watch `*.scss` and rebuild `*.scss.d.ts` when running `webpack-dev-server`
+- [ ] Make sample index page looks good
 
 ## License
 MIT License
