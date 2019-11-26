@@ -23,7 +23,7 @@
   ],
   "rules": {
     "comma-dangle": [
-      "warn",
+      "error",
       {
         "arrays": "never",
         "objects": "never",
@@ -49,7 +49,7 @@
       "always"
     ],
     "space-before-blocks": [
-      "warn",
+      "error",
       {
         "functions": "always",
         "keywords": "always",
@@ -57,11 +57,11 @@
       }
     ],
     "space-in-parens": [
-      "warn",
+      "error",
       "never"
     ],
     "space-before-function-paren": [
-      "warn",
+      "error",
       {
         "anonymous": "always",
         "named": "always",
