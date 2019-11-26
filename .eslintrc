@@ -67,6 +67,12 @@
         "named": "always",
         "asyncArrow": "always"
       }
+    ],
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      {
+        "prefixWithI": "always"
+      }
     ]
   }
 }
