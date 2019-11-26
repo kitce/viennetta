@@ -3,6 +3,10 @@
   "description": "Webpack-Babel-TypeScript-Sass Boilerplate",
   "version": "0.0.1",
   "license": "MIT",
+  "engines": {
+    "node": ">=12",
+    "yarn": ">=1.9"
+  },
   "scripts": {
     "build": "gulp clean && gulp build",
     "dev": "gulp clean && gulp dev",
