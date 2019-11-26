@@ -5,11 +5,12 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp clean && gulp build",
-    "dev": "gulp clean && gulp dev"
+    "dev": "gulp clean && gulp dev",
+    "lint:ts": "eslint *.ts **/*.ts src/**/*.ts --ignore-pattern *.scss.d.ts"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint src/**/*.ts"
+      "pre-commit": "yarn lint:ts"
     }
   },
   "devDependencies": {
