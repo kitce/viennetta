@@ -13,7 +13,9 @@
   },
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parser": "@typescript-eslint/parser",
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
@@ -28,6 +30,10 @@
           {
             "prefixWithI": "always"
           }
+        ],
+        "@typescript-eslint/semi": [
+          "error",
+          "always"
         ]
       }
     }
@@ -48,13 +54,36 @@
         "functions": "never"
       }
     ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
     "indent": [
       "error",
       2
     ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true
+      }
+    ],
     "linebreak-style": [
       "error",
       "unix"
+    ],
+    "no-multi-spaces": [
+      "error",
+      {
+        "ignoreEOLComments": true,
+        "exceptions": {
+          "Property": false
+        }
+      }
     ],
     "quotes": [
       "error",
