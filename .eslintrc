@@ -5,22 +5,38 @@
     "node": true
   },
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "eslint:recommended"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": "*.ts",
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "rules": {
+        "@typescript-eslint/interface-name-prefix": [
+          "error",
+          {
+            "prefixWithI": "always"
+          }
+        ]
+      }
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": [],
   "rules": {
     "comma-dangle": [
       "error",
@@ -66,12 +82,6 @@
         "anonymous": "always",
         "named": "always",
         "asyncArrow": "always"
-      }
-    ],
-    "@typescript-eslint/interface-name-prefix": [
-      "error",
-      {
-        "prefixWithI": "always"
       }
     ]
   }
