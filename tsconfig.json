@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    // "sourceMap": true,
+    "target": "es2018",
+    "module": "es2015",
     "strict": true,
     "noImplicitAny": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": false,
+    "moduleResolution": "node"
   },
   "include": [
-    "./src"
+    "src/**/*"
   ]
 }
