@@ -13,7 +13,7 @@
   },
   "overrides": [
     {
-      "files": "*.ts",
+      "files": ["*.ts"],
       "parser": "@typescript-eslint/parser",
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
