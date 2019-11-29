@@ -12,5 +12,7 @@
   "typescript.preferences.quoteStyle": "single",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "scss.validate": false,
+  "css.validate": false
 }
