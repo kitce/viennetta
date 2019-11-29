@@ -3,12 +3,12 @@ import merge from 'webpack-merge';
 import common from './webpack.config.common';
 
 // Loaders
-const styleLoader: webpack.RuleSetUse = {
+const styleLoader = {
   loader: 'style-loader'
 };
 
 // Rules
-const cssRule: webpack.RuleSetRule = {
+const cssRule = {
   test: /\.s?css$/,
   use: [
     styleLoader
@@ -19,7 +19,7 @@ const cssRule: webpack.RuleSetRule = {
 const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
 
 // Configuration
-const dev: webpack.Configuration = {
+const dev = {
   mode: 'development',
   devServer: {
     hot: true,
@@ -40,8 +40,8 @@ const dev: webpack.Configuration = {
 };
 
 const strategy = {
-  'module.rules.use': 'prepend' as merge.MergeStrategy
+  'module.rules.use': 'prepend'
 };
-const config: webpack.Configuration = merge.smartStrategy(strategy)(common, dev);
+const config = merge.smartStrategy(strategy)(common, dev);
 
 export default config;

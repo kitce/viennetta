@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gulp clean && gulp build",
     "dev": "gulp clean && gulp dev",
-    "lint:ts": "eslint *.ts **/*.ts src/**/*.ts --ignore-pattern *.scss.d.ts"
+    "lint:ts": "eslint **/*.ts"
   },
   "husky": {
     "hooks": {
@@ -22,6 +22,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
     "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.7.4",
     "@types/del": "^3.0.1",
     "@types/gulp": "^4.0.5",
     "@types/gulp-rename": "^0.0.33",

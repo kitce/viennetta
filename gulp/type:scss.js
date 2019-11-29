@@ -9,15 +9,15 @@ import { cssLoader } from '../webpack.config.common';
 
 gulpSass.compiler = nodeSass;
 
-const options = cssLoader.options as any; // eslint-disable-line @typescript-eslint/no-explicit-any
-const camelCase: boolean | string = options.camelCase;
+const options = cssLoader.options; // eslint-disable-line @typescript-eslint/no-explicit-any
+const camelCase = options.camelCase;
 
-const renamer = (path: gulpRename.ParsedPath): void => {
-  const basename = path.basename as string;
+const renamer = (path) => {
+  const basename = path.basename;
   path.basename = basename.replace('.css.d', '.scss.d');
 };
 
-const task: gulp.TaskFunction = () => (
+const task = () => (
   gulp.src(scss.src, { base: '.' })
     .pipe(gulpSass().on('error', gulpSass.logError))
     .pipe(gulpTypedCssModules({

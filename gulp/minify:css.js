@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import gulpCleanCSS from 'gulp-clean-css';
 import { css } from './files';
 
-const task: gulp.TaskFunction = () => (
+const task = () => (
   gulp.src(css.dist, { base: '.' })
     .pipe(gulpCleanCSS())
     .pipe(gulp.dest('.'))

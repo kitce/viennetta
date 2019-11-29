@@ -1,28 +1,27 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import nodeSass from 'node-sass';
-import webpack from 'webpack';
 
 // Loaders
-const tsLoader: webpack.RuleSetUse = {
+const tsLoader = {
   loader: 'ts-loader'
 };
 
-const babelLoader: webpack.RuleSetUse = {
+const babelLoader = {
   loader: 'babel-loader'
 };
 
-const sassLoader: webpack.RuleSetUse = {
+const sassLoader = {
   loader: 'sass-loader',
   options: {
     implementation: nodeSass
   }
 };
 
-const postcssLoader: webpack.RuleSetUse = {
+const postcssLoader = {
   loader: 'postcss-loader'
 };
 
-export const cssLoader: webpack.RuleSetLoader = {
+export const cssLoader = {
   loader: 'css-loader',
   options: {
     modules: true,
@@ -31,7 +30,7 @@ export const cssLoader: webpack.RuleSetLoader = {
 };
 
 // Rules
-const tsRule: webpack.RuleSetRule = {
+const tsRule = {
   exclude: /node_modules/,
   test: /\.ts$/,
   use: [
@@ -40,7 +39,7 @@ const tsRule: webpack.RuleSetRule = {
   ]
 };
 
-const cssRule: webpack.RuleSetRule = {
+const cssRule = {
   test: /\.s?css$/,
   use: [
     cssLoader,
@@ -50,12 +49,12 @@ const cssRule: webpack.RuleSetRule = {
 };
 
 // Plugins
-const htmlWebpackPlugin: webpack.Plugin = new HtmlWebpackPlugin({
+const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: './src/index.html'
 });
 
 // Configuration
-const config: webpack.Configuration = {
+const config = {
   entry: {
     main: './src/index.ts'
   },

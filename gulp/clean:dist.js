@@ -1,8 +1,7 @@
 import del from 'del';
-import gulp from 'gulp';
 import { dist } from './files';
 
-const task: gulp.TaskFunction = () => (
+const task = () => (
   del(dist.dir)
 );
 
