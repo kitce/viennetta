@@ -25,6 +25,9 @@
         "@typescript-eslint"
       ],
       "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "off"
+        ],
         "@typescript-eslint/interface-name-prefix": [
           "error",
           {
@@ -34,6 +37,9 @@
         "@typescript-eslint/semi": [
           "error",
           "always"
+        ],
+        "semi": [
+          "off"
         ]
       }
     }
@@ -63,7 +69,10 @@
     ],
     "indent": [
       "error",
-      2
+      2,
+      {
+        "SwitchCase": 1
+      }
     ],
     "key-spacing": [
       "error",
