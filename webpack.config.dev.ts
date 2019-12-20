@@ -33,7 +33,10 @@ const dev: webpack.Configuration = {
   },
   plugins: [
     hotModuleReplacementPlugin
-  ]
+  ],
+  watchOptions: {
+    aggregateTimeout: 500
+  }
 };
 
 const strategy = {
