@@ -1,10 +1,11 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
+import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.config.common';
 
 // Rules
-const cssRule = {
+const cssRule: webpack.RuleSetRule = {
   test: /\.s?css$/,
   use: [
     MiniCssExtractPlugin.loader
@@ -17,7 +18,7 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
 });
 
 // Configuration
-const prod = {
+const prod: webpack.Configuration = {
   mode: 'production',
   output: {
     filename: '[name].bundle.[hash].js',
@@ -40,7 +41,7 @@ const prod = {
 };
 
 const strategy = {
-  'module.rules.use': 'prepend'
+  'module.rules.use': 'prepend' as merge.MergeStrategy
 };
 const config = merge.smartStrategy(strategy)(common, prod);
 

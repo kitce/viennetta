@@ -1,36 +1,37 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import nodeSass from 'node-sass';
+import webpack from 'webpack';
 
 // Loaders
-const tsLoader = {
+const tsLoader: webpack.RuleSetLoader = {
   loader: 'ts-loader'
 };
 
-const babelLoader = {
+const babelLoader: webpack.RuleSetLoader = {
   loader: 'babel-loader'
 };
 
-const sassLoader = {
+const sassLoader: webpack.RuleSetLoader = {
   loader: 'sass-loader',
   options: {
     implementation: nodeSass
   }
 };
 
-const postcssLoader = {
+const postcssLoader: webpack.RuleSetLoader = {
   loader: 'postcss-loader'
 };
 
-export const cssLoader = {
+export const cssLoader: webpack.RuleSetLoader = {
   loader: 'css-loader',
   options: {
     modules: true,
-    camelCase: true
+    localsConvention: 'camelCase'
   }
 };
 
 // Rules
-const tsRule = {
+const tsRule: webpack.RuleSetRule = {
   exclude: /node_modules/,
   test: /\.ts$/,
   use: [
@@ -39,7 +40,7 @@ const tsRule = {
   ]
 };
 
-const cssRule = {
+const cssRule: webpack.RuleSetRule = {
   test: /\.s?css$/,
   use: [
     cssLoader,
@@ -50,13 +51,13 @@ const cssRule = {
 
 // Plugins
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: './src/index.html'
+  template: './src/main.html'
 });
 
 // Configuration
-const config = {
+const config: webpack.Configuration = {
   entry: {
-    main: './src/index.ts'
+    main: './src/main.ts'
   },
   resolve: {
     extensions: ['.ts', '.js', '.json']

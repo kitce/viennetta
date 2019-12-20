@@ -5,7 +5,7 @@ import { js } from './files';
 
 const uglify = gulpUglifyCompose(uglifyJS, console);
 
-const task = () => (
+const task: gulp.TaskFunction = () => (
   gulp.src(js.dist, { base: '.' })
     .pipe(uglify())
     .pipe(gulp.dest('.'))

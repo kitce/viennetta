@@ -1,25 +1,22 @@
 import gulp from 'gulp';
 import gulpRename from 'gulp-rename';
-import gulpSass from 'gulp-sass';
 import gulpTypedCssModules from 'gulp-typed-css-modules';
-import nodeSass from 'node-sass';
 import typedCssModules from 'typed-css-modules';
-import { scss } from './files';
+import { css } from './files';
+import sass from './sass';
+import cleanCss from './clean:css';
 import { cssLoader } from '../webpack.config.common';
 
-gulpSass.compiler = nodeSass;
-
-const options = cssLoader.options; // eslint-disable-line @typescript-eslint/no-explicit-any
-const camelCase = options.camelCase;
+const options = cssLoader.options as any; // eslint-disable-line @typescript-eslint/no-explicit-any
+const camelCase = options.localsConvention === 'camelCase';
 
 const renamer = (path) => {
   const basename = path.basename;
   path.basename = basename.replace('.css.d', '.scss.d');
 };
 
-const task = () => (
-  gulp.src(scss.src, { base: '.' })
-    .pipe(gulpSass().on('error', gulpSass.logError))
+const typeCss = () => (
+  gulp.src(css.src, { base: '.' })
     .pipe(gulpTypedCssModules({
       tcm: typedCssModules,
       quiet: true,
@@ -27,6 +24,14 @@ const task = () => (
     }))
     .pipe(gulpRename(renamer))
     .pipe(gulp.dest('.'))
+);
+
+typeCss.displayName = 'type:css';
+
+const task = gulp.series(
+  sass,
+  typeCss,
+  cleanCss
 );
 
 task.displayName = 'type:scss';

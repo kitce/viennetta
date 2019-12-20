@@ -3,12 +3,12 @@ import merge from 'webpack-merge';
 import common from './webpack.config.common';
 
 // Loaders
-const styleLoader = {
+const styleLoader: webpack.RuleSetLoader = {
   loader: 'style-loader'
 };
 
 // Rules
-const cssRule = {
+const cssRule: webpack.RuleSetRule = {
   test: /\.s?css$/,
   use: [
     styleLoader
@@ -19,11 +19,11 @@ const cssRule = {
 const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
 
 // Configuration
-const dev = {
+const dev: webpack.Configuration = {
   mode: 'development',
   devServer: {
     hot: true,
-    port: 8000
+    port: 8080
   },
   devtool: 'source-map',
   module: {
@@ -33,14 +33,11 @@ const dev = {
   },
   plugins: [
     hotModuleReplacementPlugin
-  ],
-  watchOptions: {
-    aggregateTimeout: 500 // temporary solution to async issue between *.scss.d.ts and webpack-dev-server
-  }
+  ]
 };
 
 const strategy = {
-  'module.rules.use': 'prepend'
+  'module.rules.use': 'prepend' as merge.MergeStrategy
 };
 const config = merge.smartStrategy(strategy)(common, dev);
 
