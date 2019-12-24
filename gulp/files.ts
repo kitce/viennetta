@@ -9,7 +9,7 @@ export const js = {
 };
 
 export const scss = {
-  src: ['src/**/*.scss', '!src/**/_*.scss', '!src/main.scss'],
+  src: ['src/**/*.scss', '!src/main.scss'],
   dts: ['src/**/*.scss.d.ts']
 };
 
