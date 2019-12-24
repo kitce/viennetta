@@ -1,3 +1,12 @@
-// @import '~normalize.css';
-@import '~tailwindcss/base';
 @import './stylesheets/main';
+
+:global {
+  html,
+  body,
+  #root {
+    @apply antialiased;
+    @apply font-sans;
+
+    scroll-behavior: smooth;
+  }
+}
