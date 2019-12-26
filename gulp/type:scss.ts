@@ -5,9 +5,8 @@ import typedCssModules from 'typed-css-modules';
 import { css } from './files';
 import sass from './sass';
 import cleanCss from './clean:css';
-import { cssLoader } from '../webpack.config.common';
+import { options } from '../webpack/loaders/css-loader';
 
-const options = cssLoader.options as any; // eslint-disable-line @typescript-eslint/no-explicit-any
 const camelCase = options.localsConvention === 'camelCase';
 
 const renamer = (path) => {

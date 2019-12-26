@@ -1,24 +1,17 @@
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.config.common';
+import style from './webpack/loaders/style-loader';
+import hotModuleReplacementPlugin from './webpack/plugins/hot-module-replacement-plugin';
 
-// Loaders
-const styleLoader: webpack.RuleSetLoader = {
-  loader: 'style-loader'
-};
-
-// Rules
-const cssRule: webpack.RuleSetRule = {
+const scss: webpack.RuleSetRule = {
   test: /\.s?css$/,
   use: [
-    styleLoader
+    style
   ]
 };
 
-// Plugins
-const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
-
-// Configuration
+/* Configuration */
 const dev: webpack.Configuration = {
   mode: 'development',
   devServer: {
@@ -28,7 +21,7 @@ const dev: webpack.Configuration = {
   devtool: 'source-map',
   module: {
     rules: [
-      cssRule
+      scss
     ]
   },
   plugins: [

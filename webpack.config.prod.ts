@@ -3,21 +3,16 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.config.common';
+import miniCssExtractPlugin from './webpack/plugins/mini-css-extract-plugin';
 
-// Rules
-const cssRule: webpack.RuleSetRule = {
+const scss: webpack.RuleSetRule = {
   test: /\.s?css$/,
   use: [
     MiniCssExtractPlugin.loader
   ]
 };
 
-// Plugins
-const miniCssExtractPlugin = new MiniCssExtractPlugin({
-  filename: '[name].bundle.[hash].css'
-});
-
-// Configuration
+/* Configuration */
 const prod: webpack.Configuration = {
   mode: 'production',
   output: {
@@ -26,7 +21,7 @@ const prod: webpack.Configuration = {
   },
   module: {
     rules: [
-      cssRule
+      scss
     ]
   },
   plugins: [
