@@ -8,7 +8,9 @@ gulpSass.compiler = nodeSass;
 
 const task: gulp.TaskFunction = () => (
   gulp.src(scss.src, { base: '.' })
-    .pipe(gulpSass().on('error', gulpSass.logError))
+    .pipe(gulpSass({
+      includePaths: ['node_modules']
+    }).on('error', gulpSass.logError))
     .pipe(gulpPostcss())
     .pipe(gulp.dest('.'))
 );
