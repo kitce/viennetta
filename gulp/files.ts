@@ -10,7 +10,10 @@ export const js = {
 
 export const scss = {
   src: ['src/**/*.scss', '!src/main.scss'],
-  dts: ['src/**/*.scss.d.ts']
+  dts: ['src/**/*.scss.d.ts'],
+  variables: {
+    tailwind: 'src/stylesheets/variables/_tailwind'
+  }
 };
 
 export const css = {

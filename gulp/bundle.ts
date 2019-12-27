@@ -1,6 +1,6 @@
 import gulp from 'gulp';
-import typeScss from './type:scss';
 import webpack from 'webpack';
+import typeScss from './type:scss';
 import webpackProductionConfig from '../webpack.config.prod';
 
 const bundle: gulp.TaskFunction = (done) => {

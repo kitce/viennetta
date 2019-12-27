@@ -219,8 +219,12 @@ typings/
 # End of https://www.gitignore.io/api/node,macos,linux,intellij,visualstudiocode
 
 ### Additional project files ###
-# Generatred SCSS declaration files
+# Generated TailwindCSS variables
+src/stylesheets/variables/_tailwind.scss
+
+# Generatred SCSS/CSS declaration files
 src/**/*.scss.d.ts
+src/**/*.css.d.ts
 
 # Compiled CSS files
 src/**/*.css
