@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "gulp clean && gulp build",
-    "dev": "gulp clean && gulp dev",
+    "dev": "gulp dev",
     "lint:js": "eslint \"**/*.js\"",
     "lint:ts": "eslint \"**/*.ts\"",
     "lint:scss": "stylelint \"**/*.scss\"",
@@ -33,6 +33,7 @@
     "@types/node-sass": "^4.11.0",
     "@types/webpack": "^4.41.0",
     "@types/webpack-dev-server": "^3.9.0",
+    "@types/webpack-env": "^1.15.1",
     "@types/webpack-merge": "^4.1.5",
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
