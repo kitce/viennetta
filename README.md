@@ -1,4 +1,4 @@
-# Tiramisu
+# Viennetta
 
 Webpack-Babel-TypeScript-Sass Boilerplate (featuring Gulp, CSS Modules, PostCSS, Tailwind...)
 
