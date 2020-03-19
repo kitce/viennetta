@@ -3,7 +3,7 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.config.common';
-import miniCssExtractPlugin from './webpack/plugins/mini-css-extract-plugin';
+import miniCssExtractPlugin from './plugins/mini-css-extract-plugin';
 
 const scss: webpack.RuleSetRule = {
   test: /\.s?css$/,

@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
-import config from '../webpack.config.dev';
+import config from '../config/webpack/webpack.config.dev';
 
 const task: gulp.TaskFunction = () => {
   const compiler = webpack(config);

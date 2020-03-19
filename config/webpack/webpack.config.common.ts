@@ -1,9 +1,8 @@
 import webpack from 'webpack';
-import typescript from './webpack/rules/typescript';
-import scss from './webpack/rules/scss';
-import htmlWebpackPlugin from './webpack/plugins/html-webpack-plugin';
+import typescript from './rules/typescript';
+import scss from './rules/scss';
+import htmlWebpackPlugin from './plugins/html-webpack-plugin';
 
-/* Configuration */
 const config: webpack.Configuration = {
   entry: {
     main: './src/main.ts'
@@ -19,8 +18,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     htmlWebpackPlugin
-  ],
-  stats: 'minimal'
+  ]
 };
 
 export default config;

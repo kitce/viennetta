@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import webpack from 'webpack';
 import typeScss from './type:scss';
-import webpackProductionConfig from '../webpack.config.prod';
+import webpackProductionConfig from '../config/webpack/webpack.config.prod';
 
 const bundle: gulp.TaskFunction = (done) => {
   const compiler = webpack(webpackProductionConfig);

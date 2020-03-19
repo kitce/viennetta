@@ -1,8 +1,8 @@
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import common from './webpack.config.common';
-import style from './webpack/loaders/style-loader';
-import hotModuleReplacementPlugin from './webpack/plugins/hot-module-replacement-plugin';
+import style from './loaders/style-loader';
+import hotModuleReplacementPlugin from './plugins/hot-module-replacement-plugin';
 
 const scss: webpack.RuleSetRule = {
   test: /\.s?css$/,
@@ -11,7 +11,6 @@ const scss: webpack.RuleSetRule = {
   ]
 };
 
-/* Configuration */
 const dev: webpack.Configuration = {
   mode: 'development',
   devServer: {
@@ -29,7 +28,8 @@ const dev: webpack.Configuration = {
   ],
   watchOptions: {
     aggregateTimeout: 500
-  }
+  },
+  stats: 'minimal'
 };
 
 const strategy = {
