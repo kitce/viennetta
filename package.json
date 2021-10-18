@@ -5,6 +5,7 @@
   "license": "MIT",
   "engines": {
     "node": ">=14",
+    "pnpm": ">=6.17",
     "yarn": ">=1.22"
   },
   "scripts": {
