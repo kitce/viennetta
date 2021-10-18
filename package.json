@@ -12,11 +12,14 @@
     "dev": "webpack serve --config ./config/webpack/webpack.config.dev.ts",
     "prebuild": "yarn clean",
     "build": "webpack --config ./config/webpack/webpack.config.prod.ts",
-    "lint": "eslint . --ext .ts"
+    "lint:ts": "eslint . --ext .ts",
+    "lint": "yarn lint:ts"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
     "@types/mini-css-extract-plugin": "^2.3.0",
     "@types/sass": "^1.16.1",
     "@types/webpack": "^5.28.0",
