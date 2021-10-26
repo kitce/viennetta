@@ -11,10 +11,10 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "webpack serve --config ./config/webpack/webpack.config.dev.ts",
-    "prebuild": "yarn clean",
-    "build": "webpack --config ./config/webpack/webpack.config.prod.ts",
+    "prebuild": "pnpm clean",
+    "build": "pnpm prebuild && webpack --config ./config/webpack/webpack.config.prod.ts",
     "lint:ts": "eslint . --ext .ts",
-    "lint": "yarn lint:ts"
+    "lint": "pnpm lint:ts"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
