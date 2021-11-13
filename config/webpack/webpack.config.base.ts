@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import environment from './plugins/environment';
-import html from './plugins/html-webpack-plugin';
+import html from './plugins/html';
 import * as asset from './rules/asset';
 import scss from './rules/scss';
 import ts from './rules/ts';

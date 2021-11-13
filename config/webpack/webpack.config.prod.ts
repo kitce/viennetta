@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
-import miniCssExtractPlugin from './plugins/mini-css-extract-plugin';
+import miniCssExtract from './plugins/mini-css-extract';
 import main from './webpack.config.main';
 
 const prod: webpack.Configuration = {
@@ -11,7 +11,7 @@ const prod: webpack.Configuration = {
     path: path.join(process.cwd(), '/dist')
   },
   plugins: [
-    miniCssExtractPlugin
+    miniCssExtract
   ]
 };
 
