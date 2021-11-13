@@ -10,9 +10,9 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "dev": "webpack serve --config ./config/webpack/webpack.config.dev.ts",
+    "dev": "NODE_ENV=development webpack serve --config ./config/webpack/webpack.config.dev.ts",
     "prebuild": "pnpm clean",
-    "build": "pnpm prebuild && webpack --config ./config/webpack/webpack.config.prod.ts",
+    "build": "pnpm prebuild && NODE_ENV=production webpack --config ./config/webpack/webpack.config.prod.ts",
     "lint:ts": "eslint . --ext .ts",
     "lint": "pnpm lint:ts"
   },

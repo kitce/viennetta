@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import environment from './plugins/environment';
 import html from './plugins/html-webpack-plugin';
 import * as asset from './rules/asset';
 import scss from './rules/scss';
@@ -17,6 +18,7 @@ const config: webpack.Configuration = {
     ]
   },
   plugins: [
+    environment,
     html
   ]
 };
