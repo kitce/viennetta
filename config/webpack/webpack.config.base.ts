@@ -2,7 +2,7 @@ import webpack from 'webpack';
 import html from './plugins/html-webpack-plugin';
 import * as asset from './rules/asset';
 import scss from './rules/scss';
-import typescript from './rules/typescript';
+import ts from './rules/ts';
 
 const config: webpack.Configuration = {
   resolve: {
@@ -13,7 +13,7 @@ const config: webpack.Configuration = {
       asset.resource,
       asset.source,
       scss,
-      typescript
+      ts
     ]
   },
   plugins: [
