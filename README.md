@@ -14,12 +14,12 @@
 
 ## Development
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Build
 ```bash
-yarn build
+pnpm build
 ```
 
 ## License
